@@ -47,3 +47,15 @@ postButton.addEventListener('click', function () {
         fetchEmployees();
     })
 })
+
+// delete button
+let deleteButton = document.querySelector('#delete-btn');
+deleteButton.addEventListener('click', function () {
+    let employeeID = `_vwxyz`
+    let url = `${serverURL}/employees`;
+    let http = new brainhttp();
+    http.delete(url, (data) => {
+        alert(JSON.stringify(data));
+        fetchEmployees();
+    })
+})
